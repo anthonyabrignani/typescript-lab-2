@@ -16,8 +16,8 @@ describe("Room", function () {
   });
   test("initial values are set from constructor params", () => {
     let lGreeting: LoudGreeter = new LoudGreeter("Hello");
-    let result: string = lGreeting.greet("Anthony");
     lGreeting.addVolume();
+    let result: string = lGreeting.greet("Anthony");
     expect(result).toBe("Hello, Anthony!!!");
   });
 

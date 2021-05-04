@@ -5,8 +5,7 @@ export class LoudGreeter extends Greeter {
   greet(name: string): string {
     return super.greet(name) + this.extra;
   }
-
   addVolume(): void {
-    this.extra + "!";
+    this.extra += "!";
   }
 }
