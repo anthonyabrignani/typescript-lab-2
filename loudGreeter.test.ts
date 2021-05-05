@@ -14,11 +14,25 @@ describe("Room", function () {
     let result: string = lGreeting.greet("Anthony");
     expect(result).toBe("Hello, Anthony!!");
   });
-  test("initial values are set from constructor params", () => {
+  test("add volume works and adds 1 !", () => {
     let lGreeting: LoudGreeter = new LoudGreeter("Hello");
     lGreeting.addVolume();
     let result: string = lGreeting.greet("Anthony");
     expect(result).toBe("Hello, Anthony!!!");
+  });
+  test("add multiple !s, `Big moves, Joseph Johns!!!!!!`", () => {
+    let lGreeting: LoudGreeter = new LoudGreeter("Big moves");
+    lGreeting.addVolume();
+    lGreeting.addVolume();
+    lGreeting.addVolume();
+    lGreeting.addVolume();
+    lGreeting.greet("Joseph Johns");
+    expect(lGreeting.greet("Joseph Johns")).toBe("Big moves, Joseph Johns!!!!!!");
+  });
+  test("no volume added, greeting is `High five, Emily!!`", () => {
+    let lGreeting: LoudGreeter = new LoudGreeter("High five");
+    lGreeting.greet("Emily");
+    expect(lGreeting.greet("Emily")).toBe("High five, Emily!!");
   });
 
 });
